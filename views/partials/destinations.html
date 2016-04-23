@@ -1,1 +1,31 @@
-<p>This is the partial for view 1</p>
+<div class="row">
+    <h3>Destinations : {{city}}</h3>
+</div>
+<div class="row">
+    <div class="well">
+        <div class="row">
+            <label>Search: <input ng-model="searchText"></label>
+        </div>
+        <div ng-repeat="dest in destinations| filter:searchText" class="panel panel-info">
+            <div class="panel-heading">
+                {{dest.name}}
+            </div>
+            <div class="panel-body">
+                <div class="col-md-4">
+                    <img src="{{dest.imageurl}}" alt="..." class="img-rounded" style="max-height:100%;max-width:100%">
+
+                </div>
+                <div class="col-md-4">
+                    <h5>Name: {{dest.name}}</h5>
+                    <h5>Description: {{dest.description}}</h5>
+                    <h5>Address: {{dest.address}}</h5>
+                    <h5>City: {{dest.city}}</h5>
+                    
+                </div>
+                <div class="col-md-4">
+                    <input class="btn btn-info" type="button" value="Search Hotel">
+                </div>
+                </div>
+        </div>
+    </div>
+</div>

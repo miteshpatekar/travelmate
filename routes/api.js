@@ -27,25 +27,41 @@ exports.destinations = function (req, res) {
         "Chicago":
        [{
             "id": "1",
-            "name": 'Millenium Park',
+            "name": 'Bean Millenium Park',
             "description": "asfgajsf",
             "address": "",
             "city":"Chicago",
-            "imageurl":"/images/destinations/Chicago/MilleniumPark.jpg",
+            "imageurl": "/images/destinations/Chicago/MilleniumPark.jpg",
+            "rating":"4"
         },
          {
              "id": "2",
-             "name": 'Sky Deck'
+             "name": 'John Hancock',
+             "description": "asfgajsf",
+             "address": "",
+             "city": "Chicago",
+             "imageurl": "/images/destinations/Chicago/John_Hancock_Center.jpg",
+             "rating": "5"
          },
        ],
         "New York":
        [{
            "id": "1",
-           "name": 'new Park'
+           "name": 'Brooklyn Bridge',
+           "description": "asfgajsf",
+           "address": "",
+           "city": "New York",
+           "imageurl": "/images/destinations/New York/Brooklyn_Bridge.jpg",
+           "rating": "4"
        },
          {
              "id": "2",
-             "name": 'Sky Deck'
+             "name": 'Central Park',
+             "description": "asfgajsf",
+             "address": "",
+             "city": "New York",
+             "imageurl": "/images/destinations/New York/Central_Park.jpg",
+             "rating": "4"
          },
        ],
     }

@@ -37,14 +37,15 @@ angular.module('TravelMate.controllers', ['ngAutocomplete']).
   }).
   controller('Destinations', function ($scope, $routeParams, $http) {
       // write Ctrl here
-
+      $scope.city = $routeParams.param;
+      
       $http({
           method: 'GET',
           url: '/api/destinations'
       }).
       success(function (data, status, headers, config) {
-          
-          alert("Destinations" + data[$routeParams.param]);
+          $scope.destinations = data[$routeParams.param];
+          //alert("Destinations" + data[$routeParams.param]);
       }).
       error(function (data, status, headers, config) {
           $scope.name = 'Error!';
