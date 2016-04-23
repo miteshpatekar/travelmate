@@ -42,3 +42,10 @@
 .move-down {
     margin-top: 100px;
 }
+.jumbotron-new{
+  padding-bottom: 10px;
+    padding-top: 00px;
+    padding-left: 00px;
+    padding-right: 00px;
+    font-family: "Times New Roman", Times, serif;
+}

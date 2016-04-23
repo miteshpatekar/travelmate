@@ -6,12 +6,14 @@
 <link href="/css/app.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
 <body>
     <div class="container" ng-controller="AppCtrl">
-        <div class="jumbotron">
+        <div class="jumbotron-new">
             <h1>TravelMate <small>Travel made easy</small></h1>
-            <img src="images/background/bg_4.jpeg" alt="Mountain View" style="width:1050px;height:300px;">
+          
+            <img src="images/background/bg_1.jpg" alt="Mountain View" style="width:1134px;height:320px;">
 
 
         </div>
@@ -50,13 +52,7 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Destination">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-
+        
         <div ng-view="ng-view"></div>
 
     </div>
