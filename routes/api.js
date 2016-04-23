@@ -27,7 +27,11 @@ exports.destinations = function (req, res) {
         "Chicago":
        [{
             "id": "1",
-            "name": 'Millenium Park'
+            "name": 'Millenium Park',
+            "description": "asfgajsf",
+            "address": "",
+            "city":"Chicago",
+            "imageurl":"/images/destinations/Chicago/MilleniumPark.jpg",
         },
          {
              "id": "2",
