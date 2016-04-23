@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="myApp" lang="en">
+<html ng-app="TravelMate" lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TravelMate</title>
+<link href="/css/app.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 </head>
@@ -69,14 +70,16 @@
 </nav>
 
   <ul class="menu">
-    <li><a href="view1">view1</a></li>
-    <li><a href="view2">view2</a></li>
+    <li><a href="destinations">Destination</a></li>
+    <li><a href="hotels">Hotels</a></li>
   </ul>
   <div ng-view="ng-view"></div>
   
 </div>
 <script src="js/lib/angular/angular.js"></script>
-<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+<script src="js/lib/angular/autocomplete.js"></script>
+<!--<script src="js/lib/bootstrap/bootstrap.min.js"></script>-->
 <script src="js/app.js"></script>
 <script src="js/services.js"></script>
 <script src="js/controllers.js"></script>
