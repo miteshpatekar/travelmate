@@ -11,14 +11,17 @@
 <body>
     <div class="container" ng-controller="AppCtrl">
         <div class="jumbotron-new">
-            <h1>TravelMate <small>Travel made easy</small></h1>
-          
-            <img src="images/background/bg_1.jpg" alt="Mountain View" style="width:1134px;height:320px;">
+          <div class="row">
+            <div class="col-md-10"><h1>TravelMate <small>Travel made easy</small></h1></div>
+            <div class="col-md-2"> 
 
+              <a href="">Sign in</a>
+              <a href="">Sign up</a>
+          </div>
+            
+          </div>
 
-        </div>
-        <h2>Hello {{name}}</h2>
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -34,7 +37,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">About Us <span class="sr-only">(current)</span></a></li>
+                        <li class="navbar-brand-new"><a href="#">About Us </a></li>
 
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
@@ -49,10 +52,15 @@
                     </ul>
 
 
-                </div><!-- /.navbar-collapse -->
+                </div><!-- /.navbar-collapse -->                  
             </div><!-- /.container-fluid -->
         </nav>
-        
+          
+            <img src="images/background/bg_1.jpg" alt="Mountain View" style="width:1134px;height:320px;">
+      
+
+        </div>
+
         <div ng-view="ng-view"></div>
 
     </div>

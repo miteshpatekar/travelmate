@@ -1,4 +1,10 @@
 /* app css stylesheet */
+div{
+   margin-bottom:<y>px;
+}
+div:last-of-type{
+   margin-bottom:0;
+}
 
 .menu {
   list-style: none;
@@ -48,4 +54,14 @@
     padding-left: 00px;
     padding-right: 00px;
     font-family: "Times New Roman", Times, serif;
+    
+
+}
+.navbar-brand-new{
+
+    padding-bottom: 00px;
+    padding-top: 00px;
+    font-size: 18px;
+    color: #00FFFF;
+
 }
