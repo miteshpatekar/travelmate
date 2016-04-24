@@ -1,2 +1,67 @@
-<p> This is the partial for view 2</p>
+<div class="jumbotron">
 
+    <div class="row">
+        <h3 class="headfont">Hotels in : {{city}}</h3>
+    </div>
+    <div class="row">
+
+        <div ng-show="!hotels"><h3><span class="label label-danger">{{errormsg}}</span></h3></div>
+        <div class="row">
+            <!--<label>Search: </label>-->
+            <div class="col-md-12"><input type="text" placeholder="Search" class="form-control" ng-model="searchText"></div>
+        </div>
+        <div ng-repeat="dest in hotels| filter:searchText" class="panel panel-info">
+            <div class="panel-heading">
+                <h4>{{dest.name}}</h4>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-4">
+                    <img src="{{dest.imageurl}}" alt="..." class="img-rounded" style="max-height:100%;max-width:100%">
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row"><div class="col-md-3 text-primary"><h5>Name:</h5></div><div class="col-md-9"><h5>{{dest.name}}</h5></div></div>
+                    <div class="row"><div class="col-md-3 text-primary"><h5>Description:</h5></div><div class="col-md-9"><h5>{{dest.description}}</h5></div></div>
+                    <div class="row"><div class="col-md-3 text-primary"><h5>Address:</h5></div><div class="col-md-9"><h5>{{dest.address}}</h5></div></div>
+                    <div class="row"><div class="col-md-3 text-primary"><h5>City:</h5></div><div class="col-md-9"><h5>{{dest.city}}</h5></div></div>          
+                    <div class="row"><div class="col-md-3 text-primary"><h5>Website:</h5></div><div class="col-md-9"><h5><a href="{{dest.website}}" target="_blank">{{dest.website}}</a></h5></div></div>          
+                
+                </div>
+                <div class="col-md-2">
+                    <div class="row" ng-switch="dest.rating">
+                        <div ng-switch-when="1">
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                        </div>
+                        <div ng-switch-when="2">
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                        </div>
+                        <div ng-switch-when="3">
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                        </div>
+                        <div ng-switch-when="4">
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+
+                        </div>
+                        <div ng-switch-when="5">
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                            <img src="/images/background/ratestar.png" style="width:25px;height:25px" />
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:20px">
+                        <input class="btn btn-info" type="button" ng-click="BookHotel(dest.name)" value="Book Hotel">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

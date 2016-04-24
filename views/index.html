@@ -11,16 +11,60 @@
 <body>
     <div class="container" ng-controller="AppCtrl">
         <div class="jumbotron-new">
-          <div class="row">
-            <div class="col-md-10"><h1>TravelMate <small>Travel made easy</small></h1></div>
-            <div class="col-md-2"> 
+            <div>
+                <div class="row">
+                    <div class="col-md-10">
+                        <img src="images/background/logo.jpg" alt="Mountain View" style="width:450px;height:120px">
+                    </div>
+                        <!--<div class="col-md-10"><h1 class="headfont">TravelMate <small>Travel made easy</small></h1></div>-->
+                        <div class="col-md-2 text-right">
+                            <h4 ng-show="isAuthenticated"><span>{{user}}</span><span style="margin-left:5px"><a ng-href="" ng-click="LogOut()">LogOut</a></span></h4>
+                            <h4><a ng-hide="isAuthenticated" ng-href="/#/signin">Sign in</a>     <a ng-hide="isAuthenticated" ng-href="/#/signup">Sign up</a></h4>
+                        </div>
 
-              <a href="">Sign in</a>
-              <a href="">Sign up</a>
-          </div>
-            
-          </div>
+                    </div>
 
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Home</a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="navbar-brand-new"><a href="#">About Us </a></li>
+
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+
+
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </div>
+            <img src="images/background/bg_1.jpg" alt="Mountain View" style="width:1134px;height:320px">
+      
+
+        </div>
+
+        <div ng-view="ng-view"></div>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -31,38 +75,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Home</a>
+                    <h5 class="navbar-brand" >@Copyright- TravelMate</h5>                   
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="navbar-brand-new"><a href="#">About Us </a></li>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                        </li>
-                    </ul>
+                    
 
 
-                </div><!-- /.navbar-collapse -->                  
+                </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-          
-            <img src="images/background/bg_1.jpg" alt="Mountain View" style="width:1134px;height:320px;">
-      
-
-        </div>
-
-        <div ng-view="ng-view"></div>
-
     </div>
     <script src="js/lib/angular/angular.js"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>

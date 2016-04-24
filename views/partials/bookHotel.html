@@ -1,0 +1,131 @@
+﻿
+<div class="jumbotron">
+    <div class="row"><h2 class="headfont">Book Hotel - {{hotel}}</h2></div>
+    <div class="row">
+        <form class="form" ng-submit="submitRegister()" accept-charset="UTF-8">
+            <div class="row">
+                <div class="input-group row-buffer">
+                    <span class="input-group-addon">First Name</span>
+                    <input class="form-control input-lg" ng-model="register.email" placeholder="First Name" required="required" maxlength="100" type="text">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group row-buffer">
+                    <span class="input-group-addon">Last Name</span>
+                    <input class="form-control input-lg" ng-model="register.email" placeholder="Last Name" required="required" maxlength="100" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group row-buffer">
+                    <span class="input-group-addon">E-mail</span>
+                    <input class="form-control input-lg" ng-model="register.email" placeholder="Email" required="required" maxlength="100" type="email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group row-buffer">
+                    <span class="input-group-addon">Room Type</span>
+                    <select class="form-control">
+                        <option>Standard</option>
+                        <option>Deluxe</option>
+                        <option>Luxury</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <span class="input-group-addon">Arrival Date</span>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker1').datetimepicker();
+                            });
+                </script>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <span class="input-group-addon">Departure Date</span>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker1').datetimepicker();
+                            });
+                </script>
+            </div>
+            <h4 style="margin-top:20px">Payent Information</h4>
+
+            <div class="row">
+                <div class="input-group row-buffer">
+                    <span class="input-group-addon">Select Payment Method</span>
+                    <select class="form-control">
+                        <option>Visa</option>
+                        <option>Mastercard</option>
+                        <option>American Express</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group row-buffer">
+                    <span class="input-group-addon">Card Number</span>
+                    <input class="form-control input-lg" ng-model="register.email" placeholder="Card Number" required="required" maxlength="100" type="number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group row-buffer">
+                    <span class="input-group-addon">Cardholder Name</span>
+                    <input class="form-control input-lg" ng-model="register.email" placeholder="Name" required="required" maxlength="100" type="text">
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <span class="input-group-addon">Expiry Date</span>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker1').datetimepicker();
+                            });
+                </script>
+            </div>
+
+            <div class="row">
+                <div class="input-group row-buffer">
+                    <span class="input-group-addon">CVC Code</span>
+                    <input class="form-control input-lg" ng-model="register.email" placeholder="CVC Code" required="required" maxlength="100" type="number">
+                </div>
+            </div>
+            <div class="row" style="margin-top:10px">
+                <a id="btn-signin" class="btn btn-primary" href="#/main">Book</a>
+                <a id="btn-signin" class="btn btn-primary" href="#/main">Cancel</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+

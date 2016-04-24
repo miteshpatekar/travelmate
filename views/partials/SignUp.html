@@ -1,0 +1,40 @@
+﻿<div class="jumbotron">
+    <div class="row"><h2 class="headfont">Sign Up</h2></div>
+
+
+    <div class="row">
+        <form class="form" ng-submit="submitRegister()" accept-charset="UTF-8">
+            <div class="input-group row-buffer">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control input-lg" ng-model="register.name" placeholder="Name" required="required" maxlength="100" type="text">
+            </div>
+            <div class="input-group row-buffer">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input class="form-control input-lg" ng-model="register.email" placeholder="Email" required="required" maxlength="100" type="email">
+            </div>
+
+            <div class="input-group row-buffer">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                <input class="form-control input-lg" id="regPassword" ng-model="register.password" placeholder="Password" required="required" maxlength="60" type="password">
+            </div>
+            <div class="input-group row-buffer">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                <input class="form-control input-lg" id="regConfirmPassword" ng-model="register.cpassword" placeholder="Confirm Password" required="required" maxlength="60" type="password">
+            </div>
+            <p ng-show="register.password != register.cpassword" class="help-block">Passwords do not match.</p>
+            <div class="form-group row-buffer">
+                <button type="submit" class="btn btn-block btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div class="row text-center">
+    <p>
+        <h4>
+            Already a member?
+            <a id="btn-signin" class="btn btn-primary" href="/#/signin">Sign In</a>
+        </h4>
+    </p>
+</div>

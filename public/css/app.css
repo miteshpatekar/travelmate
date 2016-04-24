@@ -57,6 +57,11 @@ div:last-of-type{
     
 
 }
+.jumbotron{
+    padding-top: 00px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .navbar-brand-new{
 
     padding-bottom: 00px;
@@ -64,4 +69,7 @@ div:last-of-type{
     font-size: 18px;
     color: #00FFFF;
 
+}
+.headfont{
+    color:#10669E;
 }

@@ -13,14 +13,26 @@ config(function ($routeProvider, $locationProvider) {
     when('/search', {
       templateUrl: 'partials/search',
       controller: 'Search'
-    }).
+    }).   
     when('/destinations/:param', {
       templateUrl: 'partials/destinations',
       controller: 'Destinations'
     }).
-    when('/hotels', {
+    when('/hotels/:param', {
       templateUrl: 'partials/hotels',
       controller: 'Hotels'
+    }).
+    when('/signup', {
+      templateUrl: 'partials/SignUp',
+      controller: 'SignUp'
+    }).
+    when('/signin', {
+        templateUrl: 'partials/SignIn',
+        controller: 'SignIn'
+    }).
+    when('/bookhotel/:param', {
+          templateUrl: 'partials/bookHotel',
+          controller: 'BookHotel'
     }).
     otherwise({
       redirectTo: '/search'
