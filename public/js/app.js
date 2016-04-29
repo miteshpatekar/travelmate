@@ -6,7 +6,8 @@ angular.module('TravelMate', [
   'TravelMate.controllers',
   'TravelMate.filters',
   'TravelMate.services',
-  'TravelMate.directives'
+  'TravelMate.directives',
+  'ngMap'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
@@ -33,6 +34,10 @@ config(function ($routeProvider, $locationProvider) {
     when('/bookhotel/:param', {
           templateUrl: 'partials/bookHotel',
           controller: 'BookHotel'
+    }).
+    when('/destinations/maps', {
+          templateUrl: 'partials/maps',
+          controller: 'Maps'
     }).
     otherwise({
       redirectTo: '/search'

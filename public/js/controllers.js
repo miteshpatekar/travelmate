@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('TravelMate.controllers', ['ngAutocomplete']).
+angular.module('TravelMate.controllers', ['ngAutocomplete', 'ngMap']).
   controller('AppCtrl', function ($scope, $http, $location, $route) {
       // alert("hiii");
       if (sessionStorage.username === undefined)
@@ -50,7 +50,7 @@ angular.module('TravelMate.controllers', ['ngAutocomplete']).
       
       // alert("Search");
   }).
-  controller('Destinations', function ($scope, $routeParams, $http, $location) {
+  controller('Destinations', function ($scope, NgMap, $routeParams, $http, $location) {
       // write Ctrl here
       $scope.city = $routeParams.param;
       $scope.myNumber = 5;
@@ -78,6 +78,14 @@ angular.module('TravelMate.controllers', ['ngAutocomplete']).
           //alert(city)
           $location.path("/hotels/" + city);
       }
+
+      // $scope.searchOnMaps = function() {
+      //    NgMap.getMap().then(function(map) {
+      //     console.log(map.getCenter());
+      //     console.log('markers', map.markers);
+      //     console.log('shapes', map.shapes);
+      //   });
+      // }
 
   }).
    controller('SignUp', function ($scope,$http) {
@@ -147,4 +155,65 @@ angular.module('TravelMate.controllers', ['ngAutocomplete']).
   }).
 controller('BookHotel', function ($scope, $routeParams,$http) {
     $scope.hotel = $routeParams.param;
+}).
+
+controller('Maps', function ($scope, NgMap, $routeParams, $http) {
+
+    $scope.pointsCity = [
+        { "city": "Chicago", "name": "Bean Millenium Park", "latitude": 41.883365 , "longitude": -87.623134 },
+        { "city": "Chicago","name": "John Hancock Tower", "latitude": 41.8989217 , "longitude": -87.6236638 },
+        { "city": "Chicago","name": "Navy Pier", "latitude": 41.8916997 , "longitude": -87.6044962 },
+        { "city": "Chicago","name": "Willis Tower", "latitude": 41.878644 , "longitude": -87.6358859 },
+        { "city": "Chicago","name": "BuckingHam Fountain", "latitude": 41.8755887 , "longitude": -87.6189408 },
+        { "city": "Chicago","name": "Adler Planetarium", "latitude": 41.8661444 , "longitude": -87.6067179 },
+
+        { "city": "New York","name": "Statue of Liberty", "latitude": 40.689247 , "longitude": -74.044502 },
+        { "city": "New York","name": "Central Park", "latitude": 40.785091  , "longitude": -73.968285 },
+        { "city": "New York","name": "Times Square", "latitude": 40.758896 , "longitude": -73.985130 },
+        { "city": "New York","name": "Brooklyn Bridge", "latitude": 40.650002 , "longitude": -73.949997 },
+        { "city": "New York","name": "The Empire State Building", "latitude": 40.748817 , "longitude": -73.985428 },
+        { "city": "New York","name": "Manhattan's Chinatown", "latitude": 40.7158 , "longitude": -73.997 }
+
+    ];
+
+
+
+  $scope.pointsHotels = [
+        { "city": "Chicago", "name": "Congress", "latitude": 41.875395 , "longitude":  -87.624332 },
+        { "city": "Chicago","name": "Double Tree", "latitude": 41.6618 , "longitude": -87.7423 },
+        { "city": "Chicago","name": "Hotel Chicago", "latitude": 41.8916997 , "longitude": -87.6044962 },
+        { "city": "Chicago","name": "Millennium Knickerbocker Hotel", "latitude": 41.8998 , "longitude": -87.6227 },
+        { "city": "Chicago","name": "Marriot", "latitude": 41.8755887 , "longitude": -87.6189408 },
+        { "city": "Chicago","name": "Sheraton Grand Chicago", "latitude": 41.8891 , "longitude": -87.6197 },
+
+        { "city": "New York","name": "Hilton Garden", "latitude": 40.689247 , "longitude": -74.044502 },
+        { "city": "New York","name": "Jolly Madison Towers", "latitude": 40.785091  , "longitude": -73.968285 },
+        { "city": "New York","name": "Marriott Marquis", "latitude": 40.7586 , "longitude": -73.9862 },
+        { "city": "New York","name": "New Yorker A Wyndham Hotel", "latitude": 40.7527 , "longitude": -73.9936 },
+        { "city": "New York","name": "Hotel Row", "latitude": 40.7575 , "longitude": -73.9866 },
+
+    ];
+
+
+
+    $scope.cityLatLong = [
+        { "name": "Chicago", "latitude": 41.881832 , "longitude": -87.623177 },
+        { "name": "New York", "latitude":   40.730610, "longitude": -73.935242 },
+    ]
+    
+
+    $scope.customIcon = {
+        "scaledSize": [32, 32],
+        "url": "http://sportsboard.punjab.gov.pk/imagesmm/social/maps.png"
+    };
+// $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE";)
+
+// $scope.searchOnMaps = function() {
+//    NgMap.getMap().then(function(map) {
+//     console.log(map.getCenter());
+//     console.log('markers', map.markers);
+//     console.log('shapes', map.shapes);
+//   });
+// }
+ 
 });
