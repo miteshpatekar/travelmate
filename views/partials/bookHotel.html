@@ -2,18 +2,20 @@
 <div class="jumbotron">
     <div class="row"><h2 class="headfont">Book Hotel - {{hotel}}</h2></div>
     <div class="row">
-        <form class="form" ng-submit="submitRegister()" accept-charset="UTF-8">
+
+        <form class="form" ng-submit="submitBook()" accept-charset="UTF-8" ng-hide="isBooked">
             <div class="row">
                 <div class="input-group row-buffer">
                     <span class="input-group-addon">First Name</span>
-                    <input class="form-control input-lg" ng-model="register.email" placeholder="First Name" required="required" maxlength="100" type="text">
+                    <input class="form-control input-lg" ng-model="register.fname" placeholder="First Name" required="required" maxlength="100" type="text">
+                    {{register.fname}}
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-group row-buffer">
                     <span class="input-group-addon">Last Name</span>
-                    <input class="form-control input-lg" ng-model="register.email" placeholder="Last Name" required="required" maxlength="100" type="text">
+                    <input class="form-control input-lg" ng-model="register.lname" placeholder="Last Name" required="required" maxlength="100" type="text">
                 </div>
             </div>
             <div class="row">
@@ -25,7 +27,7 @@
             <div class="row">
                 <div class="input-group row-buffer">
                     <span class="input-group-addon">Room Type</span>
-                    <select class="form-control">
+                    <select class="form-control" ng-model="register.roomtype">
                         <option>Standard</option>
                         <option>Deluxe</option>
                         <option>Luxury</option>
@@ -38,7 +40,7 @@
                 <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
                         <span class="input-group-addon">Arrival Date</span>
-                        <input type='text' class="form-control" />
+                        <input type='text' class="form-control" ng-model="register.adate"/>
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -56,7 +58,7 @@
                 <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
                         <span class="input-group-addon">Departure Date</span>
-                        <input type='text' class="form-control" />
+                        <input type='text' class="form-control" ng-model="register.ddate"/>
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -85,13 +87,13 @@
             <div class="row">
                 <div class="input-group row-buffer">
                     <span class="input-group-addon">Card Number</span>
-                    <input class="form-control input-lg" ng-model="register.email" placeholder="Card Number" required="required" maxlength="100" type="number">
+                    <input class="form-control input-lg" ng-model="register.cnumber" placeholder="Card Number" required="required" maxlength="100" type="number">
                 </div>
             </div>
             <div class="row">
                 <div class="input-group row-buffer">
                     <span class="input-group-addon">Cardholder Name</span>
-                    <input class="form-control input-lg" ng-model="register.email" placeholder="Name" required="required" maxlength="100" type="text">
+                    <input class="form-control input-lg" ng-model="register.cname" placeholder="Name" required="required" maxlength="100" type="text">
                 </div>
             </div>
             <div class="row">
@@ -116,15 +118,28 @@
             <div class="row">
                 <div class="input-group row-buffer">
                     <span class="input-group-addon">CVC Code</span>
-                    <input class="form-control input-lg" ng-model="register.email" placeholder="CVC Code" required="required" maxlength="100" type="number">
+                    <input class="form-control input-lg" ng-model="register.cvc" placeholder="CVC Code" required="required" maxlength="100" type="password">
                 </div>
             </div>
             <div class="row" style="margin-top:10px">
-                <a id="btn-signin" class="btn btn-primary" href="#/main">Book</a>
-                <a id="btn-signin" class="btn btn-primary" href="#/main">Cancel</a>
+                <button id="btn-signin" type="submit" class="btn btn-primary">Book</button>
+                <!--<a id="btn-signin" class="btn btn-primary" ng-click>Cancel</a>-->
             </div>
 
         </form>
+
+
+        <div class="panel-body" ng-hide="isBookedConfirmed">           
+            <div class="col-md-6">
+                <h3>Hotel Booking Confirmation !</h3>
+                <div class="row"><div class="col-md-3 text-primary"><h5>First Name:</h5></div><div class="col-md-9"><h5>{{register.fname}}</h5></div></div>
+                <div class="row"><div class="col-md-3 text-primary"><h5>Last name:</h5></div><div class="col-md-9"><h5>{{register.fname}}</h5></div></div>
+                <div class="row"><div class="col-md-3 text-primary"><h5>Email:</h5></div><div class="col-md-9"><h5>{{register.email}}</h5></div></div>
+                <div class="row"><div class="col-md-3 text-primary"><h5>Room Type:</h5></div><div class="col-md-9"><h5>{{register.roomtype}}</h5></div></div>
+                <div class="row"><div class="col-md-3 text-primary"><h5>Arrival Date:</h5></div><div class="col-md-9"><h5>{{register.adate}}</h5></div></div>
+                <div class="row"><div class="col-md-3 text-primary"><h5>Departure Date:</h5></div><div class="col-md-9"><h5>{{register.ddate}}</h5></div></div>
+            </div>         
+        </div>
     </div>
 
 </div>

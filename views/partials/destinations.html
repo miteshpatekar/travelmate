@@ -8,14 +8,14 @@
             <div ng-switch-when="Chicago">
                 <ng-map center="41.881832,-87.623177" zoom="12">
                     <div ng-repeat="p in pointsCity | filter: city">
-                        <marker icon="{{customIcon}}"  position="{{p.latitude}}, {{p.longitude}}" value="{{p.name}}"></marker>
+                        <marker icon="{{customIcon}}"  position="{{p.latitude}}, {{p.longitude}}" value="{{p.name}}" title="{{p.name}}"></marker>
                     </div>
                 </ng-map>
             </div>
             <div ng-switch-when="New York">
                 <ng-map center="40.730610,-73.935242" zoom="12">
                     <div ng-repeat="p in pointsCity | filter: city">
-                        <marker icon="{{customIcon}}"  position="{{p.latitude}}, {{p.longitude}}" value="{{p.name}}"></marker>
+                        <marker icon="{{customIcon}}"  position="{{p.latitude}}, {{p.longitude}}" value="{{p.name}}" title="{{p.name}}"></marker>
                     </div>
                 </ng-map>            
             </div>

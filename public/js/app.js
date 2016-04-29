@@ -14,7 +14,11 @@ config(function ($routeProvider, $locationProvider) {
     when('/search', {
       templateUrl: 'partials/search',
       controller: 'Search'
-    }).   
+    }).
+    when('/aboutus', {
+           templateUrl: 'partials/aboutus',
+           controller: 'AboutUs'
+    }).
     when('/destinations/:param', {
       templateUrl: 'partials/destinations',
       controller: 'Destinations'

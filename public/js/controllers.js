@@ -34,6 +34,14 @@ angular.module('TravelMate.controllers', ['ngAutocomplete', 'ngMap']).
   }).
   controller('Search', function ($scope, $location) {
       // write Ctrl here
+      if (sessionStorage.username === undefined) {
+          $scope.user = "";
+          $scope.isAuthenticated = false;
+      }
+      else {
+          $scope.user = sessionStorage.username;
+          $scope.isAuthenticated = true;
+      }
       $scope.result2 = '';
       $scope.options2 = {
           country: 'us',
@@ -155,8 +163,23 @@ angular.module('TravelMate.controllers', ['ngAutocomplete', 'ngMap']).
   }).
 controller('BookHotel', function ($scope, $routeParams,$http) {
     $scope.hotel = $routeParams.param;
+    $scope.isBooked = false;
+    $scope.isBookedConfirmed = true;
+    $scope.submitBook = function () {
+        $scope.isBooked = true;
+        $scope.isBookedConfirmed = false;
+    }
 }).
-
+controller('AboutUs', function ($scope, $routeParams, $http) {
+    if (sessionStorage.username === undefined) {
+        $scope.user = "";
+        $scope.isAuthenticated = false;
+    }
+    else {
+        $scope.user = sessionStorage.username;
+        $scope.isAuthenticated = true;
+    }
+}).
 controller('Maps', function ($scope, NgMap, $routeParams, $http) {
 
     $scope.pointsCity = [

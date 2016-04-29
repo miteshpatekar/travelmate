@@ -1,5 +1,9 @@
 ﻿<div class="jumbotron">
-    <div class="row"><h2 class="headfont">Search</h2></div>
+    <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2 right-text"> <h5 class="headfont" ng-show="isAuthenticated">Welcome {{user}} !</h5></div>
+    </div>
+    <div class="row"><h2 class="headfont">Search {{user}}</h2></div>
     <div class="row">
         <div class="col-md-11"><input type="text" id="Autocomplete" class="form-control" ng-autocomplete="result2" details="details2" options="options2" /></div>
         <div class="col-md-1">
